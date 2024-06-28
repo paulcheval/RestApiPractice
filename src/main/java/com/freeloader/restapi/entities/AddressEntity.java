@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -23,8 +24,8 @@ public class AddressEntity {
 	private String zipCode;
 	private String country;
 	
-	@OneToOne(mappedBy="address")
-	private UserEntity user;
+	//@OneToMany(mappedBy="address")
+	//private UserEntity user;
 	
 	
 	protected AddressEntity() {
@@ -75,6 +76,10 @@ public class AddressEntity {
 	public long getId() {
 		return id;
 	}
+
+	public void setId(long id) {
+        this.id = id;
+    }
 
 
 	@Override
